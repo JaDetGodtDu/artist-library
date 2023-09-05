@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Metallica",
+    "birthdate": "1981-10-28",
+    "activeSince": "1981",
+    "genres": ["Thrash Metal", "Heavy Metal"],
+    "labels": ["Blackened Recordings", "Elektra Records"],
+    "website": "https://www.metallica.com/",
+    "image": "https://example.com/metallica.jpg",
+    "shortDescription": "Legendary American heavy metal band and the fathers of thrash-metal.",
+    "favorite": false
+  },
+  {
+    "id": 2,
+    "name": "Iron Maiden",
+    "birthdate": "1975-12-25",
+    "activeSince": "1975",
+    "genres": ["Heavy Metal"],
+    "labels": ["Parlophone", "Sanctuary Records"],
+    "website": "https://www.ironmaiden.com/",
+    "image": "https://example.com/ironmaiden.jpg",
+    "shortDescription": "Iconic British heavy metal band.",
+    "favorite": false
+  },
+  {
+    "id": 3,
+    "name": "Slayer",
+    "birthdate": "1981-12-31",
+    "activeSince": "1981",
+    "genres": ["Thrash Metal"],
+    "labels": ["American Recordings", "Nuclear Blast"],
+    "website": "https://www.slayer.net/",
+    "image": "https://example.com/slayer.jpg",
+    "shortDescription": "Influential American thrash metal band.",
+    "favorite": false
+  },
+  {
+    "id": 4,
+    "name": "Job for a Cowboy",
+    "birthdate": "1981-12-31",
+    "activeSince": "2003",
+    "genres": ["Death Metal", "Deathcore"],
+    "labels": ["Metal Blade", "King of the Monsters"],
+    "website": "",
+    "image": "",
+    "shortDescription": "Underground death metal band",
+    "favorite": false
+  },
+  {
+    "id": 1693906717023,
+    "name": "Megadeth",
+    "birthdate": "1964-09-13",
+    "activeSince": "1983-01-01",
+    "genres": ["Thrash Metal"],
+    "labels": ["Capitol Records", "Roadrunner Records"],
+    "website": "https://www.megadeth.com/",
+    "image": "https://example.com/megadeth.jpg",
+    "shortDescription": "Iconic American thrash metal band.",
+    "favorite": true
+  }
+]
