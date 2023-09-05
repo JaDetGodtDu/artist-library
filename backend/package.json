@@ -1,14 +1,14 @@
 {
-  "name": "--y",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type":"module",
-  "scripts": {
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "name": "artist-library",
+  "version": "1.0.0",
+  "description": "A library of artists.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
