@@ -1,10 +1,17 @@
 import express from "express";
 import fs from "fs/promises";
+import cors from "cors";
 
 const port = 3000;
 
 const app = express();
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 async function readArtists() {
   const artistsBuff = await fs.readFile("artists.json");
@@ -21,7 +28,6 @@ app.get("/", (req, res) => {
 
 app.get("/artists", async (req, res) => {
   const json = await readArtists();
-  console.log(json);
   res.send(json);
 }); // Gets/fetches the complete list of artists
 
