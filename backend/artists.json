@@ -45,10 +45,10 @@
     "website": "",
     "image": "",
     "shortDescription": "Underground death metal band",
-    "favorite": false
+    "favorite": true
   },
   {
-    "id": 1693906717023,
+    "id": 1693984173590,
     "name": "Megadeth",
     "birthdate": "1964-09-13",
     "activeSince": "1983-01-01",
@@ -58,5 +58,29 @@
     "image": "https://example.com/megadeth.jpg",
     "shortDescription": "Iconic American thrash metal band.",
     "favorite": true
+  },
+  {
+    "id": 1693984755458,
+    "name": "Black Sabbath",
+    "birthdate": "1968-02-13",
+    "activeSince": "1968-01-01",
+    "genres": ["Heavy Metal", "Doom Metal"],
+    "labels": ["Vertigo Records", "Warner Bros. Records"],
+    "website": "https://www.blacksabbath.com/",
+    "image": "https://example.com/blacksabbath.jpg",
+    "shortDescription": "Pioneering British heavy metal and doom metal band.",
+    "favorite": false
+  },
+  {
+    "id": 1693984874533,
+    "name": "Pantera",
+    "birthdate": "1981-08-20",
+    "activeSince": "1981-01-01",
+    "genres": ["Groove Metal", "Thrash Metal"],
+    "labels": ["EastWest Records", "Elektra Records"],
+    "website": "https://www.pantera.com/",
+    "image": "https://example.com/pantera.jpg",
+    "shortDescription": "Influential American groove metal and thrash metal band.",
+    "favorite": false
   }
 ]
