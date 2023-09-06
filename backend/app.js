@@ -42,7 +42,6 @@ app.post("/artists", async (req, res) => {
   const newArtist = {
     id: new Date().getTime(),
     name: req.body.name,
-    birthdate: req.body.birthdate,
     activeSince: req.body.activeSince,
     genres: req.body.genres,
     labels: req.body.labels,
@@ -72,7 +71,6 @@ app.put("/artists/:id", async (req, res) => {
   const updatedArtist = {
     id: Number(req.params.id),
     name: req.body.name,
-    birthdate: req.body.birthdate,
     activeSince: req.body.activeSince,
     genres: req.body.genres,
     labels: req.body.labels,
