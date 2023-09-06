@@ -8,11 +8,30 @@
   </head>
   <body>
     <header>
-      <h1>Artist library CRUD</h1>
+      <h1><b>Artist library CRUD</b></h1>
     </header>
     <main>
+      <section id="tools">
+        <button id="btn-create-artist">Create new Artist</button>
+        <div>
+          <label for="input-search"><b>Search:</b></label>
+          <input
+            type="search"
+            id="input-search"
+            placeholder="What are you looking for?"
+          />
+        </div>
+        <label for="select-filter-by">
+          <b>Filter:</b>
+            <select id="filter-by">
+              <option value="showAll" selected>Show all</option>
+              <option value="favorites">Favorites</option>
+            </select>
+          </label>
+      </section>
       <section id="artists-grid" class="grid-container"></section>
-      <form id="form-create">
+      <dialog id="dialog-create">
+        <form id="form-create">
         <h2>Create a new Artist</h2>
         <input type="text" name="name" placeholder="Name" required />
         <input
@@ -38,9 +57,10 @@
         />
 
         <button>Create Artist</button>
-      </form>
-
-      <form id="form-update">
+        </form>
+      </dialog>
+      <dialog id="dialog-update">
+        <form id="form-update">
         <h2>Update Artist</h2>
         <input type="text" name="name" placeholder="Name" required />
         <input
@@ -65,7 +85,9 @@
           required
         />
         <button>Update Artist</button>
-      </form>
+        </form>
+      </dialog>
+      <dialog id="dialog-delete"></dialog>
     </main>
     <script src="frontend.js" type="module"></script>
   </body>

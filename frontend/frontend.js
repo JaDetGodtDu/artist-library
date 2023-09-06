@@ -10,6 +10,9 @@ function initApp() {
   document
     .querySelector("#form-update")
     .addEventListener("submit", updateArtist);
+  document
+  .querySelector("#btn-create-artist")
+  .addEventListener("click", showCreateModal)
 }
 
 async function updateArtistsView() {
@@ -29,24 +32,29 @@ function displayArtists(list) {
 
   for (const artist of list) {
     let myHTML = /* HTML */ `
-      <img src="${artist.image}" />
-      <h2>${artist.name}</h2>
-      <p>${artist.activeSince}</p>
-      <p>${artist.genres}</p>
-      <p>${artist.labels}</p>
-      <p>${artist.shortDescription}</p>
-      <p>${artist.website}</p>
-      <p>${artist.favorite}</p>
-      <div class="btns">
-        <button class="btn-favorite-artist">Favorite</button>
-        <button class="btn-update-artist">Update</button>
-        <button class="btn-delete-artist">Delete</button>
-      </div>
+      <article>
+        <img src="${artist.image}" />
+        <h2>${artist.name}</h2>
+        <p><b>Established:</b> ${artist.activeSince}</p>
+        <p><b>Genre:</b>  ${artist.genres}</p>
+        <p><b>Label:</b>  ${artist.labels}</p>
+        <p><b>Description:</b>  ${artist.shortDescription}</p>
+        <a href="${artist.website}">${artist.website}</a>
+        <p>${artist.favorite}</p>
+        <div class="btns">
+        <button id="btn-update-artist">Update</button>
+        <button id="btn-delete-artist">Delete</button>
+        <button id="btn-favorite-artist">Favorite</button>
+        </div>
+      </article>
     `;
     document
       .querySelector("#artists-grid")
       .insertAdjacentHTML("beforeend", myHTML);
   }
+  document.querySelector("#btn-update-artist").addEventListener("click", showUpdateModal)
+  document.querySelector("#btn-delete-artist").addEventListener("click", showDeleteModal)
+  document.querySelector("#btn-favorite-artist")
 }
 
 function createArtist() {}
@@ -54,3 +62,16 @@ function createArtist() {}
 function updateArtist() {}
 
 function deleteArtist() {}
+
+function showCreateModal(){
+  console.log("showing create modal");
+  document.querySelector("#dialog-create").showModal();
+}
+function showUpdateModal(){
+  console.log("showing update modal");
+  document.querySelector("#dialog-update").showModal()
+}
+function showDeleteModal(){
+  console.log("showing delete modal");
+  document.querySelector("#dialog-delete").showModal()
+}
