@@ -3,10 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Metal Music Library</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Artist library CRUD</h1>
+    </header>
+    <main>
+      <section id="artists-grid" class="grid-container"></section>
+      <form id="form-create">
+        <h2>Create a new Artist</h2>
+        <input type="text" name="name" placeholder="Name" required />
+        <input
+          type="text"
+          name="activeSince"
+          placeholder="Active since:"
+          required
+        />
+        <input type="text" name="genres" placeholder="Genres" required />
+        <input type="text" name="labels" placeholder="Label(s)" required />
+        <input
+          type="url"
+          name="website"
+          placeholder="Paste website URL"
+          required
+        />
+        <input type="url" name="image" placeholder="Paste image url" required />
+        <input
+          type="text"
+          name="shortDescription"
+          placeholder="Write a short description here"
+          required
+        />
+
+        <button>Create Artist</button>
+      </form>
+
+      <form id="form-update">
+        <h2>Update Artist</h2>
+        <input type="text" name="name" placeholder="Name" required />
+        <input
+          type="text"
+          name="activeSince"
+          placeholder="Active since:"
+          required
+        />
+        <input type="text" name="genres" placeholder="Genres" required />
+        <input type="text" name="labels" placeholder="Label(s)" required />
+        <input
+          type="url"
+          name="website"
+          placeholder="Paste website URL"
+          required
+        />
+        <input type="url" name="image" placeholder="Paste image url" required />
+        <input
+          type="text"
+          name="shortDescription"
+          placeholder="Write a short description here"
+          required
+        />
+        <button>Update Artist</button>
+      </form>
+    </main>
     <script src="frontend.js" type="module"></script>
   </body>
 </html>
