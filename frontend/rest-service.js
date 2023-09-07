@@ -13,7 +13,7 @@ async function fetchArtists() {
   }
 }
 
-async function createArtistClicked(event) {
+async function createArtist(event) {
   const form = event.target;
   const name = form.name.value;
   const activeSince = form.activeSince.value;
@@ -50,50 +50,80 @@ async function createArtistClicked(event) {
   return response;
 }
 
-async function updateArtistClicked(artist) {
-    console.log(artist.id);
-    console.log(artist);
-  
-    const name = document.querySelector("#name").value;
-    const activeSince = document.querySelector("#activeSince").value;
-    const genres = document.querySelector("#genres").value;
-    const labels = document.querySelector("#labels").value;
-    const website = document.querySelector("#website").value;
-    const image = document.querySelector("#image").value;
-    const shortDescription = document.querySelector("#shortDescription").value;
-  
-    const updatedArtist = {
-      name,
-      activeSince,
-      genres,
-      labels,
-      shortDescription,
-      website,
-      image,
-      favorite: artist.favorite,
-      id: artist.id,
-    };
-    console.log(updatedArtist);
-  
-    const response = await fetch(`${endpoint}/artists/${artist.id}`, {
-      method: "PUT",
-      body: JSON.stringify(updatedArtist),
-      headers: headers,
-    });
-    console.log(response);
-    location.reload();
-    return response;
-  }
+async function updateArtist(artist) {
+  console.log(artist.id);
+  console.log(artist);
 
-  async function deleteYesClicked(artist){
-    console.log(artist);
-    const response = await fetch(`${endpoint}/artists/${artist.id}`, {
-      method: "DELETE"
-    });
-    if (response.ok){
-      console.log("Artist succesfully deleted");
-      document.querySelector("#dialog-delete").close()
-      location.reload()
-    }
+  const name = document.querySelector("#name").value;
+  const activeSince = document.querySelector("#activeSince").value;
+  const genres = document.querySelector("#genres").value;
+  const labels = document.querySelector("#labels").value;
+  const website = document.querySelector("#website").value;
+  const image = document.querySelector("#image").value;
+  const shortDescription = document.querySelector("#shortDescription").value;
+
+  const updatedArtist = {
+    name,
+    activeSince,
+    genres,
+    labels,
+    shortDescription,
+    website,
+    image,
+    favorite: artist.favorite,
+    id: artist.id,
+  };
+  console.log(updatedArtist);
+
+  const response = await fetch(`${endpoint}/artists/${artist.id}`, {
+    method: "PUT",
+    body: JSON.stringify(updatedArtist),
+    headers: headers,
+  });
+  console.log(response);
+  location.reload();
+  return response;
+}
+
+async function favoriteArtist(artist){
+  const updatedArtist = {
+    name:artist.name,
+    activeSince:artist.activeSince,
+    genres:artist.genres,
+    labels:artist.labels,
+    shortDescription:artist.shortDescription,
+    website:artist.website,
+    image:artist.image,
+    favorite: artist.favorite,
+    id: artist.id,
+  };
+  console.log(updatedArtist);
+
+  const response = await fetch(`${endpoint}/artists/${artist.id}`, {
+    method: "PUT",
+    body: JSON.stringify(updatedArtist),
+    headers: headers,
+  });
+  console.log(response);
+  location.reload();
+  return response;
+}
+
+async function deleteYesClicked(artist) {
+  console.log(artist);
+  const response = await fetch(`${endpoint}/artists/${artist.id}`, {
+    method: "DELETE",
+  });
+  if (response.ok) {
+    console.log("Artist succesfully deleted");
+    document.querySelector("#dialog-delete").close();
+    location.reload();
   }
-export { fetchArtists, createArtistClicked, updateArtistClicked, deleteYesClicked };
+}
+export {
+  fetchArtists,
+  createArtist,
+  updateArtist,
+  deleteYesClicked,
+  favoriteArtist
+};

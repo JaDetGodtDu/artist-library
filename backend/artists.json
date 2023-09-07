@@ -1,32 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Metallica",
-    "activeSince": "1981",
-    "genres": "Thrash Metal,Heavy Metal",
-    "labels": "Blackened Recordings,Elektra Records",
-    "website": "https://www.metallica.com/",
-    "image": "https://media.lex.dk/media/148534/standard_compressed_Por-Alfredo-Alvarado.jpg",
-    "shortDescription": "Legendary American heavy metal band and the fathers of thrash-metal.",
-    "favorite": false
-  },
-  {
-    "id": 2,
-    "name": "Iron Maiden",
-    "activeSince": "1975",
-    "genres": [
-      "Heavy Metal"
-    ],
-    "labels": [
-      "Parlophone",
-      "Sanctuary Records"
-    ],
-    "website": "https://www.ironmaiden.com/",
-    "image": "https://media.lex.dk/media/158815/standard_compressed_21221817839_0939bd51fb_o.jpg",
-    "shortDescription": "Iconic British heavy metal band.",
-    "favorite": false
-  },
-  {
     "id": 3,
     "name": "Slayer",
     "activeSince": "1981",
