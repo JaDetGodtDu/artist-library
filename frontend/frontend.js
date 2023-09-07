@@ -14,7 +14,12 @@ async function updateArtistsView() {
   const artists = await fetchArtists();
   displayArtists(artists);
 }
-
+function displayArtists(listOfArtists) {
+  document.querySelector("#artists-grid").innerHTML = "";
+  for (const artist of listOfArtists) {
+    buildArtistHTML(artist);
+  }
+}
 async function fetchArtists() {
   const res = await fetch(`${endpoint}/artists`);
   const data = await res.json();
@@ -25,36 +30,40 @@ async function fetchArtists() {
   }
 }
 
-function displayArtists(list) {
-  document.querySelector("#artists-grid").innerHTML = "";
+function buildArtistHTML(artist) {
   console.log("Showing artists");
-  for (const artist of list) {
-    let myHTML = /* HTML */ `
-      <article>
-        <img src="${artist.image}" />
-        <h2>${artist.name}</h2>
-        <p><b>Established:</b> ${artist.activeSince}</p>
-        <p><b>Genre:</b> ${artist.genres}</p>
-        <p><b>Label:</b> ${artist.labels}</p>
-        <p><b>Description:</b> ${artist.shortDescription}</p>
-        <a href="${artist.website}">${artist.website}</a>
-        <p>${artist.favorite}</p>
-        <div class="btns">
-          <button class="update">Update</button>
-          <button class="delete">Delete</button>
-          <button id="btn-favorite-artist">Favorite</button>
-        </div>
-      </article>
-    `;
-    document
-      .querySelector("#artists-grid")
-      .insertAdjacentHTML("beforeend", myHTML);
-  }
+  let myHTML = /* HTML */ `
+    <article>
+      <img src="${artist.image}" />
+      <h2>${artist.name}</h2>
+      <p><b>Established:</b> ${artist.activeSince}</p>
+      <p><b>Genre:</b> ${artist.genres}</p>
+      <p><b>Label:</b> ${artist.labels}</p>
+      <p><b>Description:</b> ${artist.shortDescription}</p>
+      <a href="${artist.website}">${artist.website}</a>
+      <p>${artist.favorite}</p>
+      <div class="btns">
+        <button class="update">Update</button>
+        <button class="delete">Delete</button>
+        <button id="btn-favorite-artist">Favorite</button>
+      </div>
+    </article>
+  `;
+  document
+    .querySelector("#artists-grid")
+    .insertAdjacentHTML("beforeend", myHTML);
+
+  document
+    .querySelector("#artists-grid article:last-child .update")
+    .addEventListener("click", () => showUpdateModal(artist));
+  document
+    .querySelector("#artists-grid article:last-child .delete")
+    .addEventListener("click", () => showDeleteModal(artist));
 }
 
 function showCreateModal() {
-  console.log("showing create modal");
   document.querySelector("#dialog-create").showModal();
+  console.log("showing create modal");
 
   document
     .querySelector("#form-create")
@@ -89,4 +98,76 @@ async function createArtistClicked(event) {
   console.log(response);
   location.reload();
   return response;
+}
+
+function showUpdateModal(artist) {
+  const updateForm = document.querySelector("#form-update");
+  updateForm.name.value = artist.name;
+  updateForm.activeSince.value = artist.activeSince;
+  updateForm.genres.value = artist.genres;
+  updateForm.labels.value = artist.labels;
+  updateForm.website.value = artist.website;
+  updateForm.image.value = artist.image;
+  updateForm.shortDescription.value = artist.shortDescription;
+  console.log(artist.id);
+  console.log(artist.favorite);
+  document.querySelector("#dialog-update").showModal();
+  console.log("Show update modal!");
+
+  document
+    .querySelector("#form-update")
+    .addEventListener("submit", () => updateArtistClicked(artist));
+}
+async function updateArtistClicked(artist) {
+  console.log(artist.id);
+  console.log(artist);
+
+  const name = document.querySelector("#name").value;
+  const activeSince = document.querySelector("#activeSince").value;
+  const genres = document.querySelector("#genres").value;
+  const labels = document.querySelector("#labels").value;
+  const website = document.querySelector("#website").value;
+  const image = document.querySelector("#image").value;
+  const shortDescription = document.querySelector("#shortDescription").value;
+
+  const updatedArtist = {
+    name,
+    activeSince,
+    genres,
+    labels,
+    shortDescription,
+    website,
+    image,
+    favorite: artist.favorite,
+    id: artist.id,
+  };
+  console.log(updatedArtist);
+
+  const response = await fetch(`${endpoint}/artists/${artist.id}`, {
+    method: "PUT",
+    body: JSON.stringify(updatedArtist),
+    headers: headers,
+  });
+  console.log(response);
+  location.reload();
+  return response;
+}
+
+function showDeleteModal(artist) {
+  document.querySelector("#dialog-delete").showModal();
+  console.log("Showing delete modal");
+  console.log(artist);
+
+  let myHTML = /* html */ `
+    <article>
+      <h2>Are you sure you want to delete ${artist.name} from the database?</h2>
+      <button id="btn-delete-yes"class="btn">Yes</button>
+      <br><br>
+      <button id="btn-delete-no"class="btn">No</button>
+    </article>
+  `;
+
+  document
+    .querySelector("#dialog-delete")
+    .insertAdjacentHTML("beforeend", myHTML);
 }

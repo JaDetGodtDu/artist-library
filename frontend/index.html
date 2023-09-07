@@ -72,30 +72,52 @@
       <dialog id="dialog-update">
         <form id="form-update">
           <h2>Update Artist</h2>
-          <input type="text" name="name" placeholder="Name" required />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            required
+          />
           <input
             type="text"
             name="activeSince"
+            id="activeSince"
             placeholder="Active since:"
             required
           />
-          <input type="text" name="genres" placeholder="Genres" required />
-          <input type="text" name="labels" placeholder="Label(s)" required />
+          <input
+            type="text"
+            name="genres"
+            id="genres"
+            placeholder="Genres"
+            required
+          />
+          <input
+            type="text"
+            name="labels"
+            id="labels"
+            placeholder="Label(s)"
+            required
+          />
           <input
             type="url"
             name="website"
+            id="website"
             placeholder="Paste website URL"
             required
           />
           <input
             type="url"
             name="image"
+            id="image"
             placeholder="Paste image url"
             required
           />
           <input
             type="text"
             name="shortDescription"
+            id="shortDescription"
             placeholder="Write a short description here"
             required
           />
@@ -107,9 +129,7 @@
           />
         </form>
       </dialog>
-      <dialog id="dialog-delete">
-        <form id="form-delete"></form>
-      </dialog>
+      <dialog id="dialog-delete"></dialog>
     </main>
     <script src="frontend.js" type="module"></script>
   </body>

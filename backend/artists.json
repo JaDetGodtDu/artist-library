@@ -1,1 +1,123 @@
-[{"id":1,"name":"Metallica","activeSince":"1981","genres":["Thrash Metal","Heavy Metal"],"labels":["Blackened Recordings","Elektra Records"],"website":"https://www.metallica.com/","image":"https://media.lex.dk/media/148534/standard_compressed_Por-Alfredo-Alvarado.jpg","shortDescription":"Legendary American heavy metal band and the fathers of thrash-metal.","favorite":false},{"id":2,"name":"Iron Maiden","activeSince":"1975","genres":["Heavy Metal"],"labels":["Parlophone","Sanctuary Records"],"website":"https://www.ironmaiden.com/","image":"https://media.lex.dk/media/158815/standard_compressed_21221817839_0939bd51fb_o.jpg","shortDescription":"Iconic British heavy metal band.","favorite":false},{"id":3,"name":"Slayer","activeSince":"1981","genres":["Thrash Metal"],"labels":["American Recordings","Nuclear Blast"],"website":"https://www.slayer.net/","image":"https://media.lex.dk/media/45979/standard_compressed_1024px-Slayer_Tuska_2019__4_.jpg","shortDescription":"Influential American thrash metal band.","favorite":false},{"id":4,"name":"Job for a Cowboy","activeSince":"2003","genres":["Death Metal","Deathcore"],"labels":["Metal Blade","King of the Monsters"],"website":"","image":"https://upload.wikimedia.org/wikipedia/commons/3/36/Job_For_A_Cowboy_Mayhem_Fest_Hartford%2C_CT.jpg","shortDescription":"Underground death metal band","favorite":true},{"id":1693984173590,"name":"Megadeth","activeSince":"1983-01-01","genres":["Thrash Metal"],"labels":["Capitol Records","Roadrunner Records"],"website":"https://www.megadeth.com/","image":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Megadeth_Live_at_The_O2_2018-06-16.jpg","shortDescription":"Iconic American thrash metal band.","favorite":true},{"id":1693984755458,"name":"Black Sabbath","activeSince":"1968-01-01","genres":["Heavy Metal","Doom Metal"],"labels":["Vertigo Records","Warner Bros. Records"],"website":"https://www.blacksabbath.com/","image":"https://upload.wikimedia.org/wikipedia/commons/0/09/Black_Sabbath_%282013%29.jpg","shortDescription":"Pioneering British heavy metal and doom metal band.","favorite":false},{"id":1693984874533,"name":"Pantera","activeSince":"1981-01-01","genres":["Groove Metal","Thrash Metal"],"labels":["EastWest Records","Elektra Records"],"website":"https://www.pantera.com/","image":"https://www.moshville.co.uk/wordpress/wp-content/uploads/2022/07/Pantera-header-863x477.jpg","shortDescription":"Influential American groove metal and thrash metal band.","favorite":false},{"id":1694077658704,"name":"binguds","activeSince":"1998","genres":"dinguscore","labels":"Bingi Music","website":"http://www.google.com","image":"https://images.pexels.com/photos/162292/seagull-bird-animal-nature-162292.jpeg","shortDescription":"Bingus Dingus Lingus","favorite":false}]
+[
+  {
+    "id": 1,
+    "name": "Metallica2",
+    "activeSince": "1981",
+    "genres": "Thrash Metal,Heavy Metal",
+    "labels": "Blackened Recordings,Elektra Records",
+    "website": "https://www.metallica.com/",
+    "image": "https://media.lex.dk/media/148534/standard_compressed_Por-Alfredo-Alvarado.jpg",
+    "shortDescription": "Legendary American heavy metal band and the fathers of thrash-metal.",
+    "favorite": false
+  },
+  {
+    "id": 2,
+    "name": "Iron Maiden",
+    "activeSince": "1975",
+    "genres": [
+      "Heavy Metal"
+    ],
+    "labels": [
+      "Parlophone",
+      "Sanctuary Records"
+    ],
+    "website": "https://www.ironmaiden.com/",
+    "image": "https://media.lex.dk/media/158815/standard_compressed_21221817839_0939bd51fb_o.jpg",
+    "shortDescription": "Iconic British heavy metal band.",
+    "favorite": false
+  },
+  {
+    "id": 3,
+    "name": "Slayer",
+    "activeSince": "1981",
+    "genres": [
+      "Thrash Metal"
+    ],
+    "labels": [
+      "American Recordings",
+      "Nuclear Blast"
+    ],
+    "website": "https://www.slayer.net/",
+    "image": "https://media.lex.dk/media/45979/standard_compressed_1024px-Slayer_Tuska_2019__4_.jpg",
+    "shortDescription": "Influential American thrash metal band.",
+    "favorite": false
+  },
+  {
+    "id": 4,
+    "name": "Job for a Cowboy",
+    "activeSince": "2003",
+    "genres": [
+      "Death Metal",
+      "Deathcore"
+    ],
+    "labels": [
+      "Metal Blade",
+      "King of the Monsters"
+    ],
+    "website": "",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Job_For_A_Cowboy_Mayhem_Fest_Hartford%2C_CT.jpg",
+    "shortDescription": "Underground death metal band",
+    "favorite": true
+  },
+  {
+    "id": 1693984173590,
+    "name": "Megadeth",
+    "activeSince": "1983-01-01",
+    "genres": [
+      "Thrash Metal"
+    ],
+    "labels": [
+      "Capitol Records",
+      "Roadrunner Records"
+    ],
+    "website": "https://www.megadeth.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Megadeth_Live_at_The_O2_2018-06-16.jpg",
+    "shortDescription": "Iconic American thrash metal band.",
+    "favorite": true
+  },
+  {
+    "id": 1693984755458,
+    "name": "Black Sabbath",
+    "activeSince": "1968-01-01",
+    "genres": [
+      "Heavy Metal",
+      "Doom Metal"
+    ],
+    "labels": [
+      "Vertigo Records",
+      "Warner Bros. Records"
+    ],
+    "website": "https://www.blacksabbath.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Black_Sabbath_%282013%29.jpg",
+    "shortDescription": "Pioneering British heavy metal and doom metal band.",
+    "favorite": false
+  },
+  {
+    "id": 1693984874533,
+    "name": "Pantera",
+    "activeSince": "1981-01-01",
+    "genres": [
+      "Groove Metal",
+      "Thrash Metal"
+    ],
+    "labels": [
+      "EastWest Records",
+      "Elektra Records"
+    ],
+    "website": "https://www.pantera.com/",
+    "image": "https://www.moshville.co.uk/wordpress/wp-content/uploads/2022/07/Pantera-header-863x477.jpg",
+    "shortDescription": "Influential American groove metal and thrash metal band.",
+    "favorite": false
+  },
+  {
+    "id": 1694077658704,
+    "name": "binguds",
+    "activeSince": "1998",
+    "genres": "dinguscore",
+    "labels": "Bingi Music",
+    "website": "http://www.google.com",
+    "image": "https://images.pexels.com/photos/162292/seagull-bird-animal-nature-162292.jpeg",
+    "shortDescription": "Bingus Dingus Lingus",
+    "favorite": false
+  }
+]
