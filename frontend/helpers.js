@@ -10,33 +10,25 @@ async function filterByFavorite() {
 
   let filteredArtists = [];
   if (filterValue === "favorites") {
-    filteredArtists = artists.filter((artist)=>artist.favorite===true);
+    filteredArtists = artists.filter((artist) => artist.favorite === true);
   } else {
     filteredArtists = artists;
   }
   displayArtists(filteredArtists);
 }
-async function searchArtists(){
-  const searchInput = document.querySelector("#input-search").value.toLowerCase();
-  console.log(searchInput);
-
+async function searchArtists() {
+  const input = document.querySelector("#input-search").value.toLowerCase();
   const artists = await fetchArtists();
-  console.log(artists);
 
-  let searchResults = [];
-
-  if (searchInput.trim() === "") {
-    // If the search input is empty or contains only whitespace, show all artists
-    searchResults = artists;
+  let results = [];
+  if (input.trim() === "") {
+    results = artists;
   } else {
-    // Use filter to find artists whose name or other relevant property matches the search input
-    searchResults = artists.filter((artist) => {
-      // You can customize this condition to search in specific properties (e.g., artist.name)
-      // Here, it searches for the query in artist names (case-insensitive)
-      return artist.name.toLowerCase().includes(searchInput);
+    results = artists.filter((artist) => {
+      return artist.name.toLowerCase().includes(input);
     });
   }
 
-  displayArtists(searchResults);
+  displayArtists(results);
 }
 export { filterByFavorite, searchArtists };
