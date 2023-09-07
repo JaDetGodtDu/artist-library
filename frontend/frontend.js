@@ -186,8 +186,16 @@ function showDeleteModal(artist) {
     .querySelector("#btn-delete-no")
     .addEventListener("click", deleteNoClicked);
 }
-function deleteYesClicked(artist){
+async function deleteYesClicked(artist){
   console.log(artist);
+  const response = await fetch(`${endpoint}/artists/${artist.id}`, {
+    method: "DELETE"
+  });
+  if (response.ok){
+    console.log("Artist succesfully deleted");
+    document.querySelector("#dialog-delete").close()
+    location.reload()
+  }
 }
 function deleteNoClicked(){
   document.querySelector("#dialog-delete").close()
