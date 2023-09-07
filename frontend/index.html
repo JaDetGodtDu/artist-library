@@ -23,68 +23,78 @@
         </div>
         <label for="select-filter-by">
           <b>Filter:</b>
-            <select id="filter-by">
-              <option value="showAll" selected>Show all</option>
-              <option value="favorites">Favorites</option>
-            </select>
-          </label>
+          <select id="filter-by">
+            <option value="showAll" selected>Show all</option>
+            <option value="favorites">Favorites</option>
+          </select>
+        </label>
       </section>
       <section id="artists-grid" class="grid-container"></section>
       <dialog id="dialog-create">
         <form id="form-create">
-        <h2>Create a new Artist</h2>
-        <input type="text" name="name" placeholder="Name" required />
-        <input
-          type="text"
-          name="activeSince"
-          placeholder="Active since:"
-          required
-        />
-        <input type="text" name="genres" placeholder="Genres" required />
-        <input type="text" name="labels" placeholder="Label(s)" required />
-        <input
-          type="url"
-          name="website"
-          placeholder="Paste website URL"
-          required
-        />
-        <input type="url" name="image" placeholder="Paste image url" required />
-        <input
-          type="text"
-          name="shortDescription"
-          placeholder="Write a short description here"
-          required
-        />
+          <h2>Create a new Artist</h2>
+          <input type="text" name="name" placeholder="Name" required />
+          <input
+            type="text"
+            name="activeSince"
+            placeholder="Active since:"
+            required
+          />
+          <input type="text" name="genres" placeholder="Genres" required />
+          <input type="text" name="labels" placeholder="Label(s)" required />
+          <input
+            type="url"
+            name="website"
+            placeholder="Paste website URL"
+            required
+          />
+          <input
+            type="url"
+            name="image"
+            placeholder="Paste image url"
+            required
+          />
+          <input
+            type="text"
+            name="shortDescription"
+            placeholder="Write a short description here"
+            required
+          />
 
-        <button>Create Artist</button>
+          <button id="form-create-btn">Create Artist</button>
         </form>
       </dialog>
       <dialog id="dialog-update">
         <form id="form-update">
-        <h2>Update Artist</h2>
-        <input type="text" name="name" placeholder="Name" required />
-        <input
-          type="text"
-          name="activeSince"
-          placeholder="Active since:"
-          required
-        />
-        <input type="text" name="genres" placeholder="Genres" required />
-        <input type="text" name="labels" placeholder="Label(s)" required />
-        <input
-          type="url"
-          name="website"
-          placeholder="Paste website URL"
-          required
-        />
-        <input type="url" name="image" placeholder="Paste image url" required />
-        <input
-          type="text"
-          name="shortDescription"
-          placeholder="Write a short description here"
-          required
-        />
-        <button>Update Artist</button>
+          <h2>Update Artist</h2>
+          <input type="text" name="name" placeholder="Name" required />
+          <input
+            type="text"
+            name="activeSince"
+            placeholder="Active since:"
+            required
+          />
+          <input type="text" name="genres" placeholder="Genres" required />
+          <input type="text" name="labels" placeholder="Label(s)" required />
+          <input
+            type="url"
+            name="website"
+            placeholder="Paste website URL"
+            required
+          />
+          <input
+            type="url"
+            name="image"
+            placeholder="Paste image url"
+            required
+          />
+          <input
+            type="text"
+            name="shortDescription"
+            placeholder="Write a short description here"
+            required
+          />
+          <button>Update Artist</button>
         </form>
       </dialog>
       <dialog id="dialog-delete"></dialog>
