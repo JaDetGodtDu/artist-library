@@ -22,10 +22,6 @@ async function readArtists() {
 } // Helper function that reads the JSON file and returns it as formatted JSON for later use
 
 // GET routing ---------------------------------------------------------
-app.get("/", (req, res) => {
-  res.send("GET request recieved!");
-});
-
 app.get("/artists", async (req, res) => {
   const json = await readArtists();
   res.send(json);
@@ -40,10 +36,6 @@ app.get("/artists/:id", async (req, res) => {
 }); // Gets/fetches single artist based on ID
 
 // POST routing --------------------------------------------------------
-app.post("/", (req, res) => {
-  res.send("POST request recieved!");
-});
-
 app.post("/artists", async (req, res) => {
   const newArtist = {
     id: new Date().getTime(),
@@ -67,10 +59,6 @@ app.post("/artists", async (req, res) => {
 });
 
 // PUT routing ---------------------------------------------------------
-app.put("/", (req, res) => {
-  res.send("PUT request recieved!");
-});
-
 app.put("/artists/:id", async (req, res) => {
   const reqId = Number(req.params.id);
 
@@ -103,10 +91,6 @@ app.put("/artists/:id", async (req, res) => {
 });
 
 // DELETE routing ------------------------------------------------------
-app.delete("/", (req, res) => {
-  res.send("DELETE request recieved!");
-});
-
 app.delete("/artists/:id", async (req, res) => {
   const reqId = Number(req.params.id);
 

@@ -15,6 +15,7 @@ async function updateArtistsView() {
   displayArtists(artists);
 }
 function displayArtists(listOfArtists) {
+  console.log("Showing artists");
   document.querySelector("#artists-grid").innerHTML = "";
   for (const artist of listOfArtists) {
     buildArtistHTML(artist);
@@ -27,11 +28,12 @@ async function fetchArtists() {
   if (res.ok) {
     console.log("Data fetched!");
     return data;
+  } else {
+    throw new error("Error fetching data.");
   }
 }
 
 function buildArtistHTML(artist) {
-  console.log("Showing artists");
   let myHTML = /* HTML */ `
     <article>
       <img src="${artist.image}" />
@@ -95,7 +97,13 @@ async function createArtistClicked(event) {
     body: JSON.stringify(newArtist),
     headers: headers,
   });
-  console.log(response);
+  if (response.status === 200) {
+    const responseData = await response.json();
+    const message = responseData.message;
+    console.log(message);
+  } else {
+    console.log(response.status);
+  }
   location.reload();
   return response;
 }
@@ -154,6 +162,7 @@ async function updateArtistClicked(artist) {
 }
 
 function showDeleteModal(artist) {
+  document.querySelector("#dialog-delete").innerHTML = "";
   document.querySelector("#dialog-delete").showModal();
   console.log("Showing delete modal");
   console.log(artist);
@@ -170,4 +179,16 @@ function showDeleteModal(artist) {
   document
     .querySelector("#dialog-delete")
     .insertAdjacentHTML("beforeend", myHTML);
+  document
+    .querySelector("#btn-delete-yes")
+    .addEventListener("click", () => deleteYesClicked(artist));
+  document
+    .querySelector("#btn-delete-no")
+    .addEventListener("click", deleteNoClicked);
+}
+function deleteYesClicked(artist){
+  console.log(artist);
+}
+function deleteNoClicked(){
+  document.querySelector("#dialog-delete").close()
 }
