@@ -17,6 +17,7 @@ html {
   color: var(--textBlack);
   font-family: var(--font);
 }
+/* Main user interface */
 header {
   color: var(--textWhite);
   background-color: var(--darkGrey);
@@ -128,10 +129,28 @@ main {
   border-radius: 5px;
 }
 
-/* ---------- form styling ---------- */
-/* input form stryling */
+/* Forms and dialogs */
 dialog {
   width: 450px;
+}
+dialog .btn {
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  color: var(--textWhite);
+  background-color: var(--darkGrey);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  width: 50%;
+  max-width: 380px;
+}
+.btn:hover {
+  transition: 0.5s;
+  box-shadow: 0px 8px 16px 0px var(--black);
 }
 form {
   /* margin: 2em auto 0; */
@@ -149,7 +168,6 @@ input {
   display: block;
   background: var(--opaqueWhite);
 }
-
 button {
   font-weight: 300;
   font-size: 1em;

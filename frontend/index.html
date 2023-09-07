@@ -60,8 +60,13 @@
             placeholder="Write a short description here"
             required
           />
-
-          <button id="form-create-btn">Create Artist</button>
+          <input
+            class="btn"
+            id="form-create-btn"
+            type="submit"
+            value="Create Artist"
+          />
+          <!-- <button id="form-create-btn">Create Artist</button> -->
         </form>
       </dialog>
       <dialog id="dialog-update">
@@ -94,10 +99,17 @@
             placeholder="Write a short description here"
             required
           />
-          <button>Update Artist</button>
+          <input
+            class="btn"
+            id="form-update-btn"
+            type="submit"
+            value="Update Artist"
+          />
         </form>
       </dialog>
-      <dialog id="dialog-delete"></dialog>
+      <dialog id="dialog-delete">
+        <form id="form-delete"></form>
+      </dialog>
     </main>
     <script src="frontend.js" type="module"></script>
   </body>

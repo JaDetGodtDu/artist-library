@@ -1,15 +1,10 @@
 const endpoint = "http://localhost:3000";
+const headers = { "Content-Type": "application/json" };
 
 window.addEventListener("load", initApp);
 
 function initApp() {
   updateArtistsView();
-  document
-    .querySelector("#form-create")
-    .addEventListener("submit", createArtist);
-  document
-    .querySelector("#form-update")
-    .addEventListener("submit", updateArtist);
   document
     .querySelector("#btn-create-artist")
     .addEventListener("click", showCreateModal);
@@ -24,12 +19,15 @@ async function fetchArtists() {
   const res = await fetch(`${endpoint}/artists`);
   const data = await res.json();
 
-  return data;
+  if (res.ok) {
+    console.log("Data fetched!");
+    return data;
+  }
 }
 
 function displayArtists(list) {
   document.querySelector("#artists-grid").innerHTML = "";
-
+  console.log("Showing artists");
   for (const artist of list) {
     let myHTML = /* HTML */ `
       <article>
@@ -42,8 +40,8 @@ function displayArtists(list) {
         <a href="${artist.website}">${artist.website}</a>
         <p>${artist.favorite}</p>
         <div class="btns">
-          <button id="btn-update-artist">Update</button>
-          <button id="btn-delete-artist">Delete</button>
+          <button class="update">Update</button>
+          <button class="delete">Delete</button>
           <button id="btn-favorite-artist">Favorite</button>
         </div>
       </article>
@@ -52,13 +50,6 @@ function displayArtists(list) {
       .querySelector("#artists-grid")
       .insertAdjacentHTML("beforeend", myHTML);
   }
-  document
-    .querySelector("#btn-update-artist")
-    .addEventListener("click", showUpdateModal);
-  document
-    .querySelector("#btn-delete-artist")
-    .addEventListener("click", showDeleteModal);
-  document.querySelector("#btn-favorite-artist");
 }
 
 function showCreateModal() {
@@ -66,24 +57,36 @@ function showCreateModal() {
   document.querySelector("#dialog-create").showModal();
 
   document
-    .querySelector("#form-create-btn")
-    .addEventListener("click", createArtistClicked);
+    .querySelector("#form-create")
+    .addEventListener("submit", createArtistClicked);
 }
-function showUpdateModal() {
-  console.log("showing update modal");
-  document.querySelector("#dialog-update").showModal();
+async function createArtistClicked(event) {
+  const form = event.target;
+  const name = form.name.value;
+  const activeSince = form.activeSince.value;
+  const genres = form.genres.value;
+  const labels = form.labels.value;
+  const shortDescription = form.shortDescription.value;
+  const website = form.website.value;
+  const image = form.image.value;
+  const favorite = false;
+
+  const newArtist = {
+    name,
+    activeSince,
+    genres,
+    labels,
+    shortDescription,
+    website,
+    image,
+    favorite,
+  };
+  const response = await fetch(`${endpoint}/artists`, {
+    method: "POST",
+    body: JSON.stringify(newArtist),
+    headers: headers,
+  });
+  console.log(response);
+  location.reload();
+  return response;
 }
-function showDeleteModal() {
-  console.log("showing delete modal");
-  document.querySelector("#dialog-delete").showModal();
-}
-
-function createArtistClicked() {
-  console.log("create artist clicked");
-}
-
-function createArtist() {}
-
-function updateArtist() {}
-
-function deleteArtist() {}
