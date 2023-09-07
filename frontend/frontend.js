@@ -5,10 +5,10 @@ import {
   deleteYesClicked,
   favoriteArtist,
 } from "./rest-service.js";
-import { 
-  filterByFavorite, 
-  searchArtists, 
-} from "./helpers.js";
+
+import { filterByFavorite, searchArtists } from "./helpers.js";
+
+// Initialization ---------------------------------------------------------
 window.addEventListener("load", initApp);
 
 function initApp() {
@@ -24,12 +24,12 @@ function initApp() {
     .addEventListener("input", searchArtists);
 }
 
+// HTML building functions and data fetch ---------------------------------
 async function updateArtistsView() {
   const artists = await fetchArtists();
   displayArtists(artists);
 }
 function displayArtists(listOfArtists) {
-  console.log("Showing artists");
   document.querySelector("#artists-grid").innerHTML = "";
   for (const artist of listOfArtists) {
     buildArtistHTML(artist);
@@ -77,6 +77,7 @@ function checkFavorite(artist) {
   }
   return HTML;
 }
+// Modal-view functions. Starts listeners on relevant buttons -------------
 function showCreateModal() {
   document.querySelector("#dialog-create").showModal();
   console.log("showing create modal");
@@ -95,10 +96,9 @@ function showUpdateModal(artist) {
   updateForm.website.value = artist.website;
   updateForm.image.value = artist.image;
   updateForm.shortDescription.value = artist.shortDescription;
-  console.log(artist.id);
-  console.log(artist.favorite);
+
   document.querySelector("#dialog-update").showModal();
-  console.log("Show update modal!");
+  console.log("Showing update modal!");
 
   document
     .querySelector("#form-update")
@@ -135,6 +135,7 @@ function deleteNoClicked() {
   document.querySelector("#dialog-delete").close();
 }
 
+// Favorite function ------------------------------------------------------
 async function favorite(artist) {
   if (artist.favorite === false) {
     const updatedArtist = {

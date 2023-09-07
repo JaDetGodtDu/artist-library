@@ -14,8 +14,14 @@
     "id": 4,
     "name": "Job for a Cowboy",
     "activeSince": "2003",
-    "genres": ["Death Metal", "Deathcore"],
-    "labels": ["Metal Blade", "King of the Monsters"],
+    "genres": [
+      "Death Metal",
+      "Deathcore"
+    ],
+    "labels": [
+      "Metal Blade",
+      "King of the Monsters"
+    ],
     "website": "",
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Job_For_A_Cowboy_Mayhem_Fest_Hartford%2C_CT.jpg",
     "shortDescription": "Underground death metal band",
@@ -25,8 +31,13 @@
     "id": 1693984173590,
     "name": "Megadeth",
     "activeSince": "1983-01-01",
-    "genres": ["Thrash Metal"],
-    "labels": ["Capitol Records", "Roadrunner Records"],
+    "genres": [
+      "Thrash Metal"
+    ],
+    "labels": [
+      "Capitol Records",
+      "Roadrunner Records"
+    ],
     "website": "https://www.megadeth.com/",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Megadeth_Live_at_The_O2_2018-06-16.jpg",
     "shortDescription": "Iconic American thrash metal band.",
@@ -36,8 +47,14 @@
     "id": 1693984755458,
     "name": "Black Sabbath",
     "activeSince": "1968-01-01",
-    "genres": ["Heavy Metal", "Doom Metal"],
-    "labels": ["Vertigo Records", "Warner Bros. Records"],
+    "genres": [
+      "Heavy Metal",
+      "Doom Metal"
+    ],
+    "labels": [
+      "Vertigo Records",
+      "Warner Bros. Records"
+    ],
     "website": "https://www.blacksabbath.com/",
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Black_Sabbath_%282013%29.jpg",
     "shortDescription": "Pioneering British heavy metal and doom metal band.",
@@ -47,8 +64,14 @@
     "id": 1693984874533,
     "name": "Pantera",
     "activeSince": "1981-01-01",
-    "genres": ["Groove Metal", "Thrash Metal"],
-    "labels": ["EastWest Records", "Elektra Records"],
+    "genres": [
+      "Groove Metal",
+      "Thrash Metal"
+    ],
+    "labels": [
+      "EastWest Records",
+      "Elektra Records"
+    ],
     "website": "https://www.pantera.com/",
     "image": "https://www.moshville.co.uk/wordpress/wp-content/uploads/2022/07/Pantera-header-863x477.jpg",
     "shortDescription": "Influential American groove metal and thrash metal band.",

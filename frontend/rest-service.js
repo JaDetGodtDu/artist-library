@@ -51,9 +51,6 @@ async function createArtist(event) {
 }
 
 async function updateArtist(artist) {
-  console.log(artist.id);
-  console.log(artist);
-
   const name = document.querySelector("#name").value;
   const activeSince = document.querySelector("#activeSince").value;
   const genres = document.querySelector("#genres").value;
@@ -73,14 +70,19 @@ async function updateArtist(artist) {
     favorite: artist.favorite,
     id: artist.id,
   };
-  console.log(updatedArtist);
 
   const response = await fetch(`${endpoint}/artists/${artist.id}`, {
     method: "PUT",
     body: JSON.stringify(updatedArtist),
     headers: headers,
   });
-  console.log(response);
+  if (response.status === 200) {
+    const responseData = await response.json();
+    const message = responseData.message;
+    console.log(message);
+  } else {
+    console.log(response.status);
+  }
   location.reload();
   return response;
 }
@@ -97,27 +99,28 @@ async function favoriteArtist(artist) {
     favorite: artist.favorite,
     id: artist.id,
   };
-  console.log(updatedArtist);
-
+  
   const response = await fetch(`${endpoint}/artists/${artist.id}`, {
     method: "PUT",
     body: JSON.stringify(updatedArtist),
     headers: headers,
   });
-  console.log(response);
   location.reload();
   return response;
 }
 
 async function deleteYesClicked(artist) {
-  console.log(artist);
   const response = await fetch(`${endpoint}/artists/${artist.id}`, {
     method: "DELETE",
   });
   if (response.ok) {
-    console.log("Artist succesfully deleted");
+    const responseData = await response.json();
+    const message = responseData.message;
+    console.log(message);
     document.querySelector("#dialog-delete").close();
     location.reload();
+  } else {
+    console.log(response.status);
   }
 }
 export {

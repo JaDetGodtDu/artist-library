@@ -7,7 +7,6 @@
   --black: #000000;
   --opaqueWhite: #fdfbf4;
   --font: Arial, Helvetica, sans-serif;
-  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   background-color: var(--darkGrey);
@@ -17,6 +16,7 @@ html {
   color: var(--textBlack);
   font-family: var(--font);
 }
+
 /* Main user interface */
 header {
   color: var(--textWhite);
@@ -37,8 +37,7 @@ h1 {
 main {
   min-height: calc(100vh - 110px);
   background: var(--darkGrey2);
-  padding: 110px 0 0; /* 
-    text-align: center; */
+  padding: 110px 0 0;
 }
 #tools {
   grid-template-columns: 1fr 1fr 1fr;
@@ -137,8 +136,6 @@ dialog .btn {
   font-size: 1em;
   text-align: center;
   cursor: pointer;
-  border: none;
-  border-radius: 0;
   color: var(--textWhite);
   background-color: var(--darkGrey);
   letter-spacing: 0.05em;
@@ -152,7 +149,6 @@ dialog .btn {
   box-shadow: 0px 8px 16px 0px var(--black);
 }
 form {
-  /* margin: 2em auto 0; */
   background-color: var(--darkGrey3);
   padding: 1em 1em 2em;
   text-align: center;
@@ -163,8 +159,8 @@ input {
   width: 100%;
   max-width: 350px;
   padding: 1em;
-  border: 2px solid var(--black);
   display: block;
+  border: 2px solid var(--black);
   background: var(--opaqueWhite);
 }
 button {

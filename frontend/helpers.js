@@ -1,12 +1,10 @@
 import { fetchArtists } from "./rest-service.js";
 import { displayArtists } from "./frontend.js";
 
+// Filter by favorite function --------------------------------------------
 async function filterByFavorite() {
   const filterValue = document.querySelector("#filter-by").value;
-  console.log(filterValue);
-
   const artists = await fetchArtists();
-  console.log(artists);
 
   let filteredArtists = [];
   if (filterValue === "favorites") {
@@ -16,6 +14,8 @@ async function filterByFavorite() {
   }
   displayArtists(filteredArtists);
 }
+
+// Search function --------------------------------------------------------
 async function searchArtists() {
   const input = document.querySelector("#input-search").value.toLowerCase();
   const artists = await fetchArtists();
