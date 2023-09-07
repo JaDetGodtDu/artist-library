@@ -3,13 +3,8 @@
     "id": 3,
     "name": "Slayer",
     "activeSince": "1981",
-    "genres": [
-      "Thrash Metal"
-    ],
-    "labels": [
-      "American Recordings",
-      "Nuclear Blast"
-    ],
+    "genres": "Thrash Metal",
+    "labels": "American Recordings,Nuclear Blast",
     "website": "https://www.slayer.net/",
     "image": "https://media.lex.dk/media/45979/standard_compressed_1024px-Slayer_Tuska_2019__4_.jpg",
     "shortDescription": "Influential American thrash metal band.",
@@ -80,6 +75,17 @@
     "website": "https://www.pantera.com/",
     "image": "https://www.moshville.co.uk/wordpress/wp-content/uploads/2022/07/Pantera-header-863x477.jpg",
     "shortDescription": "Influential American groove metal and thrash metal band.",
+    "favorite": false
+  },
+  {
+    "id": 1694098945140,
+    "name": "Limp Bizkit",
+    "activeSince": "1994",
+    "genres": "Nu-Metal",
+    "labels": "Flip, Interscope, MojoSuretone, Cash Money",
+    "website": "https://limpbizkit.com/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Limp_Bizkit_%28cropped%29.jpg",
+    "shortDescription": "Part of the first wave of nu metal bands.",
     "favorite": false
   }
 ]
