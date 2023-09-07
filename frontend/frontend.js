@@ -1,9 +1,9 @@
-
 import {
   fetchArtists,
-  createArtistClicked,
-  updateArtistClicked,
+  createArtist,
+  updateArtist,
   deleteYesClicked,
+  favoriteArtist,
 } from "./rest-service.js";
 window.addEventListener("load", initApp);
 
@@ -39,7 +39,7 @@ function buildArtistHTML(artist) {
       <div class="btns">
         <button class="update">Update</button>
         <button class="delete">Delete</button>
-        <button id="btn-favorite-artist">Favorite</button>
+        <button class="favorite">Favorite</button>
       </div>
     </article>
   `;
@@ -53,6 +53,9 @@ function buildArtistHTML(artist) {
   document
     .querySelector("#artists-grid article:last-child .delete")
     .addEventListener("click", () => showDeleteModal(artist));
+  document
+    .querySelector("#artists-grid article:last-child .favorite")
+    .addEventListener("click", () => favorite(artist));
 }
 
 function showCreateModal() {
@@ -61,7 +64,7 @@ function showCreateModal() {
 
   document
     .querySelector("#form-create")
-    .addEventListener("submit", createArtistClicked);
+    .addEventListener("submit", createArtist);
 }
 
 function showUpdateModal(artist) {
@@ -80,7 +83,7 @@ function showUpdateModal(artist) {
 
   document
     .querySelector("#form-update")
-    .addEventListener("submit", () => updateArtistClicked(artist));
+    .addEventListener("submit", () => updateArtist(artist));
 }
 
 function showDeleteModal(artist) {
@@ -111,4 +114,35 @@ function showDeleteModal(artist) {
 
 function deleteNoClicked() {
   document.querySelector("#dialog-delete").close();
+}
+
+async function favorite(artist) {
+  if (artist.favorite === false) {
+    const updatedArtist = {
+      name: artist.name,
+      activeSince: artist.activeSince,
+      genres: artist.genres,
+      labels: artist.labels,
+      shortDescription: artist.shortDescription,
+      website: artist.website,
+      image: artist.image,
+      favorite: true,
+      id: artist.id,
+    };
+    favoriteArtist(updatedArtist);
+  } else {
+    const updatedArtist = {
+      name: artist.name,
+      activeSince: artist.activeSince,
+      genres: artist.genres,
+      labels: artist.labels,
+      shortDescription: artist.shortDescription,
+      website: artist.website,
+      image: artist.image,
+      favorite: false,
+      id: artist.id,
+    };
+
+    favoriteArtist(updatedArtist);
+  }
 }
