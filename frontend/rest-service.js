@@ -85,15 +85,15 @@ async function updateArtist(artist) {
   return response;
 }
 
-async function favoriteArtist(artist){
+async function favoriteArtist(artist) {
   const updatedArtist = {
-    name:artist.name,
-    activeSince:artist.activeSince,
-    genres:artist.genres,
-    labels:artist.labels,
-    shortDescription:artist.shortDescription,
-    website:artist.website,
-    image:artist.image,
+    name: artist.name,
+    activeSince: artist.activeSince,
+    genres: artist.genres,
+    labels: artist.labels,
+    shortDescription: artist.shortDescription,
+    website: artist.website,
+    image: artist.image,
     favorite: artist.favorite,
     id: artist.id,
   };
@@ -125,5 +125,5 @@ export {
   createArtist,
   updateArtist,
   deleteYesClicked,
-  favoriteArtist
+  favoriteArtist,
 };

@@ -5,6 +5,7 @@ import {
   deleteYesClicked,
   favoriteArtist,
 } from "./rest-service.js";
+import { filterByFavorite, searchArtists } from "./helpers.js";
 window.addEventListener("load", initApp);
 
 function initApp() {
@@ -12,6 +13,8 @@ function initApp() {
   document
     .querySelector("#btn-create-artist")
     .addEventListener("click", showCreateModal);
+  document.querySelector("#filter-by").addEventListener("change", filterByFavorite)
+  document.querySelector("#input-search").addEventListener("input", searchArtists)
 }
 
 async function updateArtistsView() {
@@ -35,7 +38,7 @@ function buildArtistHTML(artist) {
       <p><b>Label:</b> ${artist.labels}</p>
       <p><b>Description:</b> ${artist.shortDescription}</p>
       <a href="${artist.website}">${artist.website}</a>
-      <p>${artist.favorite}</p>
+      <p>${checkFavorite(artist)}</p>
       <div class="btns">
         <button class="update">Update</button>
         <button class="delete">Delete</button>
@@ -57,7 +60,14 @@ function buildArtistHTML(artist) {
     .querySelector("#artists-grid article:last-child .favorite")
     .addEventListener("click", () => favorite(artist));
 }
-
+function checkFavorite(artist){
+  let HTML = ``
+  if (artist.favorite===true){
+    HTML =/* html */`
+    <b>Favorite</b>`
+  } else {HTML =/* html */``}
+  return HTML
+}
 function showCreateModal() {
   document.querySelector("#dialog-create").showModal();
   console.log("showing create modal");
@@ -146,3 +156,5 @@ async function favorite(artist) {
     favoriteArtist(updatedArtist);
   }
 }
+
+export{displayArtists}
